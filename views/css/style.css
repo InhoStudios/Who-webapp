@@ -1,0 +1,15 @@
+.titlecard {
+    min-height: 100px;
+    max-height: 20%;
+    overflow-y: hidden;
+}
+
+.menu-bar {
+    flex: 0 0 auto;
+    max-width: 300px;
+    width: 25%;
+}
+
+.full-height {
+    height: 100%;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upcoming Events - whoapp.ca</title>
+
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/bootstrap.css' )}}">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' )}}">
+</head>
+<body>
+    <section class="dashboard-section">
+            <div class="full-screen">
+                <div class="container-fluid">
+                    <div class="row pb-2 pt-3">
+                        <div class="col-lg-9">
+                            <div class="card text-center round header">
+                                <div class="pt-2">
+                                    <h2>Welcome back, <span>{{ username }}</span>!</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <form>
+                                <input type="submit" class="form-control form-control-lg btn-outline" value="Log out">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card round">
+                                <div class="card-content">
+                                    <h4>Upcoming Events</h4>
+
+                                    <div class="col-lg-12">
+                                        <div class="card card-shadow round">
+                                            <div class="card-content">
+                                                <h5>CPSC 302</h5>
+                                                <h6>Monday, Sept 7 15:00-17:00</h6>
+                                                <span>add location tag</span>
+                                                <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card round">
+                                <div class="card-content">
+                                    <h4>Invites</h4>
+
+                                    <div class="col-lg-12">
+                                        <div class="card card-shadow round">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <h5>CPSC 302</h5>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <h5>o o o</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>Monday, Sept 7 15:00-17:00</h6>
+                                                    <span>add location tag</span>
+                                                    <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                                </div>
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" class="form-control form-control-lg btn-danger" value="Can't make it">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" class="form-control form-control-lg btn-primary" value="I'm going!">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

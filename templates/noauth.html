@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upcoming Events - whoapp.ca</title>
+
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/bootstrap.css' )}}">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' )}}">
+</head>
+<body>
+    <section class="full-screen noauth-section">
+            <div class="container-fluid">
+                <div class="card text-center round header full-height">
+                    <div class="card-content">
+                        <img class="login-img" src="{{ url_for( 'static', filename='assets/inhostudioslogo.png' ) }}">
+                        <h2 class="pb-4">Get started with <span>whoapp.ca</span>!</h2>
+                        <form>
+                            <div class="form-group">
+                                <a href="{{ auth_url }}" class="form-control form-control-lg btn-outline-primary text-center">Login with Discord</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

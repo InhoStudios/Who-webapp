@@ -14,6 +14,13 @@ body {
     object-fit: cover;
 }
 
+.login-img {
+    width: 10vw;
+    max-width: 10vw;
+    padding-bottom: 8vh;
+    padding-top: 5vh;
+}
+
 .card-shadow {
     box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.15) !important;
 }
@@ -74,4 +81,12 @@ body {
 
 .dashboard-section {
     background-color: #f0f0f0;
+}
+
+.noauth-section {
+    background-color: #f0f0f0;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    padding-left: 33vw;
+    padding-right: 33vw;
 }

@@ -14,9 +14,9 @@
                     <div class="card-content">
                         <img class="login-img" src="{{ url_for( 'static', filename='assets/inhostudioslogo.png' ) }}">
                         <h2 class="pb-4">Get started with <span>whoapp.ca</span>!</h2>
-                        <form>
+                        <form method="post">
                             <div class="form-group">
-                                <a href="{{ auth_url }}" class="form-control form-control-lg btn-outline-primary text-center">Login with Discord</a>
+                                <input type="submit" name="login" class="form-control form-control-lg btn-outline-primary text-center" value="Login with Discord">
                             </div>
                         </form>
                     </div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar - whoapp.ca</title>
+
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/bootstrap.css' )}}">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' )}}">
+</head>
+<body>
+    <section class="dashboard-section">
+            <div class="full-screen">
+                <div class="container-fluid">
+                    <div class="row pb-2 pt-3">
+                        <form methods="post">
+                            <div class="pt-2 px-3">
+                                <input type="submit" class="d-inline-block btn-light form-control circle" value="<">
+                                <input type="submit" class="d-inline-block btn-light form-control circle" value=">">
+                                <h4 class="d-inline-block px-2">{{ date }}</h4>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            calendar sidebar
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Sunday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Monday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Tuesday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Wednesday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Thursday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Friday</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="text-center">
+                                <h4>Saturday</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <a href="/new">
+        <div class="new-evt text-center">
+            <span>+</span>
+        </div>
+    </a>
+</body>
+</html>

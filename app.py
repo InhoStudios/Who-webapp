@@ -41,20 +41,20 @@ def make_session(token=None, state=None, scope=None):
         token_updater=token_updater
     )
 
-@app.route("/", methods=['POST', 'GET'])
-def index():
+def authenticate_user():
     try:
         expiry = int(str(session.get('oauth2_token')['expires_at']).split('.')[0])
-        dt = datetime.now(timezone.utc)
-  
-        utc_time = dt.replace(tzinfo=timezone.utc)
-        utc_timestamp = int(str(utc_time.timestamp()).split('.')[0])
-        print(utc_timestamp)
-        print(expiry, utc_timestamp)
-        if expiry > utc_timestamp:
-            print('expiry is less than utc time')
-            return redirect(url_for('home'))
+        timestamp = int(str(datetime.now(timezone.utc).timestamp()).split('.')[0])
+        return timestamp <= expiry
     except:
+        return False
+
+
+@app.route("/", methods=['POST', 'GET'])
+def index():
+    if authenticate_user():
+        return redirect(url_for('home'))
+    else:
         scope = "identify guilds.members.read gdm.join".split(" ")
         discord = make_session(scope=scope)
         authorization_url, state = discord.authorization_url(AUTHORIZATION_BASE_URL)
@@ -89,13 +89,26 @@ def home():
             return redirect(url_for('index'))
     try:
         user = discord.get(API_ENDPOINT + "/oauth2/@me").json()
-        print(user)
         username = user['user']['username']
         return render_template("index.html", username=username)
     except:
         session.clear()
         return redirect(url_for('index'))
     
+@app.route("/new", methods=['POST', 'GET'])
+def new():
+    if authenticate_user():
+        return render_template("new-event.html")
+    else:
+        return redirect(url_for("index"))
+
+@app.route("/calendar", methods=['POST', 'GET'])
+def calendar():
+    if authenticate_user():
+        date = datetime.now().strftime("%B %Y")
+        return render_template("calendar.html", date=date)
+    else:
+        return redirect(url_for("index"))
 
 if __name__ == "__main__":
     app.run(port=3000, debug=True)

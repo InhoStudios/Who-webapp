@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Events - whoapp.ca</title>
+
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/bootstrap.css' )}}">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' )}}">
+</head>
+<body>
+    <section class="dashboard-section">
+            <div class="full-screen">
+                <div class="container-fluid">
+                    <div class="row pb-2 pt-3">
+                        <div class="col-lg-12">
+                            <div class="text-center round header">
+                                <div class="pt-2">
+                                    <h2>Add event / upload calendar</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="round full-height">
+                                <div class="card-content">
+                                    <h4>Create new event</h4>
+                                    <form method="post">
+                                        <div class="form-group row mb-3">
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control form-control-lg" placeholder="Name of event" name="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-lg-12">
+                                                <label for="invites">
+                                                    Invite people
+                                                </label>
+                                                <input type="text" class="form-control form-control-lg mb-3" name="invites" placeholder="Invite people">
+                                                <input type="submit" class="form-control form-control-lg btn-outline-primary" name="find-date" value="Find best date">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-lg-6">
+                                                <label for="date">
+                                                    Date
+                                                </label>
+                                                <input type="date" class="form-control form-control-lg" placeholder="Date" name="date">
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="date">
+                                                    Starts
+                                                </label>
+                                                <input type="time" class="form-control form-control-lg" name="start-time">
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <label for="date">
+                                                    Ends
+                                                </label>
+                                                <input type="time" class="form-control form-control-lg" name="end-time">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-lg-12">
+                                                <label for="desc">
+                                                    description
+                                                </label>
+                                                <textarea class="form-control form-control-lg" cols="50" rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <input type="submit" class="form-control form-control-lg btn-primary" name="create-event" value="Create event">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="round full-height">
+                                <div class="card-content">
+                                    <h4>Upload Calendar</h4>
+
+                                    <div class="col-lg-12">
+                                        <div class="card card-shadow clickable round">
+                                            <div class="card-content">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <h5>CPSC 302</h5>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <h5>o o o</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <h6>Monday, Sept 7 15:00-17:00</h6>
+                                                    <span>add location tag</span>
+                                                    <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                                </div>
+                                                <form method="post">
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" class="form-control form-control-lg btn-danger" name="submit" value="Can't make it">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" class="form-control form-control-lg btn-primary" name="submit" value="I'm going!">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upcoming Events - whoapp.ca</title>
+    <title>whoapp.ca</title>
 
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/bootstrap.css' )}}">
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/main.css' )}}">
@@ -10,13 +10,13 @@
 <body>
     <section class="full-screen noauth-section">
             <div class="container-fluid">
-                <div class="card text-center round header full-height">
+                <div class="text-center round header full-height">
                     <div class="card-content">
                         <img class="login-img" src="{{ url_for( 'static', filename='assets/inhostudioslogo.png' ) }}">
-                        <h2 class="pb-4">Get started with <span>whoapp.ca</span>!</h2>
+                        <h2 class="pb-5">Get started with <span>whoapp.ca</span>!</h2>
                         <form method="post">
                             <div class="form-group">
-                                <input type="submit" name="login" class="form-control form-control-lg btn-outline-primary text-center" value="Login with Discord">
+                                <input type="submit" name="login" class="form-control form-control-lg btn-primary text-center" value="Login with Discord">
                             </div>
                         </form>
                     </div>

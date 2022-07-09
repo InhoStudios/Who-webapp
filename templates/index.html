@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                     <div class="row pb-2 pt-3">
                         <div class="col-lg-9">
-                            <div class="card text-center round header">
+                            <div class="card-content header">
                                 <div class="pt-2">
                                     <h2>Welcome back, <span>{{ username }}</span>!</h2>
                                 </div>
@@ -21,61 +21,59 @@
                         </div>
                         <div class="col-lg-3">
                             <form method="post">
-                                <input type="submit" class="form-control form-control-lg btn-outline" name="submit" value="Log out">
+                                <div class="card-content">
+                                    <input type="submit" class="form-control form-control-lg btn-secondary" name="submit" value="Log out">
+                                </div>
                             </form>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="card round">
-                                <div class="card-content">
-                                    <h4>Upcoming Events</h4>
+                            <div class="card-content">
+                                <h4>Upcoming Events</h4>
 
-                                    <div class="col-lg-12">
-                                        <div class="card card-shadow round">
-                                            <div class="card-content">
-                                                <h5>CPSC 302</h5>
-                                                <h6>Monday, Sept 7 15:00-17:00</h6>
-                                                <span>add location tag</span>
-                                                <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
-                                            </div>
+                                <div class="col-lg-12">
+                                    <div class="card clickable round">
+                                        <div class="card-content">
+                                            <h5>CPSC 302</h5>
+                                            <h6>Monday, Sept 7 15:00-17:00</h6>
+                                            <span>add location tag</span>
+                                            <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="card round">
-                                <div class="card-content">
-                                    <h4>Invites</h4>
+                            <div class="card-content">
+                                <h4>Invites</h4>
 
-                                    <div class="col-lg-12">
-                                        <div class="card card-shadow round">
-                                            <div class="card-content">
-                                                <div class="row">
-                                                    <div class="col-lg-8">
-                                                        <h5>CPSC 302</h5>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <h5>o o o</h5>
-                                                    </div>
+                                <div class="col-lg-12">
+                                    <div class="card clickable round">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <h5>CPSC 302</h5>
                                                 </div>
-                                                <div class="row">
-                                                    <h6>Monday, Sept 7 15:00-17:00</h6>
-                                                    <span>add location tag</span>
-                                                    <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                                <div class="col-lg-4">
+                                                    <h5>o o o</h5>
                                                 </div>
-                                                <form method="post">
-                                                    <div class="form-group row">
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" class="form-control form-control-lg btn-danger" name="submit" value="Can't make it">
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" class="form-control form-control-lg btn-primary" name="submit" value="I'm going!">
-                                                        </div>
-                                                    </div>
-                                                </form>
                                             </div>
+                                            <div class="row">
+                                                <h6>Monday, Sept 7 15:00-17:00</h6>
+                                                <span>add location tag</span>
+                                                <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                            </div>
+                                            <form method="post">
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6">
+                                                        <input type="submit" class="form-control form-control-lg btn-danger" name="submit" value="Can't make it">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input type="submit" class="form-control form-control-lg btn-primary" name="submit" value="I'm going!">
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -85,5 +83,10 @@
                 </div>
             </div>
     </section>
+    <a href="/new">
+        <div class="new-evt text-center">
+            <span>+</span>
+        </div>
+    </a>
 </body>
 </html>

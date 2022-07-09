@@ -2966,6 +2966,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
+  transition: 0.3s;
 }
 .btn-primary:hover {
   color: #fff;
@@ -2996,6 +2997,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+  transition: 0.3s;
 }
 .btn-secondary:hover {
   color: #fff;
@@ -3026,6 +3028,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #198754;
   border-color: #198754;
+  transition: 0.3s;
 }
 .btn-success:hover {
   color: #fff;
@@ -3056,6 +3059,7 @@ textarea.form-control-lg {
   color: #000;
   background-color: #0dcaf0;
   border-color: #0dcaf0;
+  transition: 0.3s;
 }
 .btn-info:hover {
   color: #000;
@@ -3086,6 +3090,7 @@ textarea.form-control-lg {
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
+  transition: 0.3s;
 }
 .btn-warning:hover {
   color: #000;
@@ -3116,6 +3121,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
+  transition: 0.3s;
 }
 .btn-danger:hover {
   color: #fff;
@@ -3144,13 +3150,14 @@ textarea.form-control-lg {
 
 .btn-light {
   color: #000;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: #fff;
+  border-color: #fff;
+  transition: 0.3s;
 }
 .btn-light:hover {
   color: #000;
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  background-color: #f0f2f4;
+  border-color: #f0f2f4;
 }
 .btn-check:focus + .btn-light, .btn-light:focus {
   color: #000;
@@ -3176,6 +3183,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #212529;
   border-color: #212529;
+  transition: 0.3s;
 }
 .btn-dark:hover {
   color: #fff;
@@ -3205,6 +3213,7 @@ textarea.form-control-lg {
 .btn-outline-primary {
   color: #0d6efd;
   border-color: #0d6efd;
+  transition: 0.3s;
 }
 .btn-outline-primary:hover {
   color: #fff;
@@ -3230,6 +3239,7 @@ textarea.form-control-lg {
 .btn-outline-secondary {
   color: #6c757d;
   border-color: #6c757d;
+  transition: 0.3s;
 }
 .btn-outline-secondary:hover {
   color: #fff;
@@ -3255,6 +3265,7 @@ textarea.form-control-lg {
 .btn-outline-success {
   color: #198754;
   border-color: #198754;
+  transition: 0.3s;
 }
 .btn-outline-success:hover {
   color: #fff;
@@ -3305,6 +3316,7 @@ textarea.form-control-lg {
 .btn-outline-warning {
   color: #ffc107;
   border-color: #ffc107;
+  transition: 0.3s;
 }
 .btn-outline-warning:hover {
   color: #000;
@@ -3330,6 +3342,7 @@ textarea.form-control-lg {
 .btn-outline-danger {
   color: #dc3545;
   border-color: #dc3545;
+  transition: 0.3s;
 }
 .btn-outline-danger:hover {
   color: #fff;
@@ -3355,6 +3368,7 @@ textarea.form-control-lg {
 .btn-outline-light {
   color: #f8f9fa;
   border-color: #f8f9fa;
+  transition: 0.3s;
 }
 .btn-outline-light:hover {
   color: #000;
@@ -3380,6 +3394,7 @@ textarea.form-control-lg {
 .btn-outline-dark {
   color: #212529;
   border-color: #212529;
+  transition: 0.3s;
 }
 .btn-outline-dark:hover {
   color: #fff;
@@ -4449,7 +4464,6 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
 .card > hr {

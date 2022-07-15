@@ -42,6 +42,7 @@ def make_session(token=None, state=None, scope=None):
     )
 
 def authenticate_user():
+    print(session.get('oauth2_token'))
     try:
         expiry = int(str(session.get('oauth2_token')['expires_at']).split('.')[0])
         timestamp = int(str(datetime.now(timezone.utc).timestamp()).split('.')[0])
@@ -89,8 +90,10 @@ def home():
             return redirect(url_for('index'))
     try:
         user = discord.get(API_ENDPOINT + "/oauth2/@me").json()
+        print(user)
         username = user['user']['username']
-        return render_template("index.html", username=username)
+        avatar_url = f"https://cdn.discordapp.com/avatars/{user['user']['id']}/{user['user']['avatar']}"
+        return render_template("index.html", username=username, avatar=avatar_url)
     except:
         session.clear()
         return redirect(url_for('index'))

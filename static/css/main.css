@@ -25,6 +25,30 @@ a {
     padding-top: 5vh;
 }
 
+.pfp {
+    height: 40px;
+    object-fit: cover;
+}
+
+.pfp-lg {
+    height: 65px;
+    object-fit: cover;
+}
+
+.icon {
+    height: 40px;
+    padding: 10px;
+    float: right;
+    object-fit: cover;
+}
+
+.icon-lg {
+    height: 50px;
+    padding: 10px;
+    float: right;
+    object-fit: cover;
+}
+
 .card-shadow {
     box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.15) !important;
 }
@@ -42,33 +66,29 @@ a {
     padding: 15px;
 }
 
+.col-lg-cal {
+    flex: 0 0 auto;
+    width: 11.9047619%;
+}
+
 .circle {
     border-radius: 1000px;
     width: calc(var(--height)) !important;
     max-width: calc(var(--height)) !important;
 }
 
-.header span{
-    color: #0d6efd;
+.header h4{
+    margin-top: 0 !important;
+    line-height: 0 !important;
 }
 
 .new-evt {
     width: 60px;
     height: 60px;
     position: absolute;
-    right: 40px;
-    bottom: 40px;
+    right: 15px;
+    bottom: 15px;
     border-radius: 80px;
-}
-
-.new-evt span {
-    text-align: center;
-    align-items: center;
-    align-self: center;
-    font-size: 60px;
-    color: #0d6efd;
-    text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-    font-family:'Courier New', Courier, monospace;
 }
 
 /* modal */

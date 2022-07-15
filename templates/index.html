@@ -13,18 +13,26 @@
                 <div class="container-fluid">
                     <div class="row pb-2 pt-3">
                         <div class="col-lg-9">
-                            <div class="card-content header">
-                                <div class="pt-2">
-                                    <h2>Welcome back, <span>{{ username }}</span>!</h2>
+                            <div class="d-inline-block">
+                                <div class="card-content">
+                                    <img src="{{ avatar }}" class="align-self-start round pfp-lg">
                                 </div>
+                            </div>
+                            <div class="d-inline-block header full-height">
+                                <h3>Welcome back, {{ username }}</h3>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <form method="post">
-                                <div class="card-content">
-                                    <input type="submit" class="form-control form-control-lg btn-secondary" name="submit" value="Log out">
-                                </div>
+                                <input type="submit" src="{{ url_for('static', filename='assets/logout.png') }}" class="hidden-passthrough" name="submit" id="logout" value="Log out">
                             </form>
+                            <div class="card-content align-items-center">
+                                <a class="circle px-2" onclick="
+                                        document.getElementById('logout').click();
+                                    "><img src="{{ url_for('static', filename='assets/logout.png') }}" class="icon-lg btn-danger round" name="submit"></a>
+                                <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/calendar.png') }}" class="icon-lg btn-light round"></a>
+                                <!--<a><input type="image" src="{{ url_for('static', filename='assets/logout.png') }}" class="icon btn-light" name="submit" id="submit" value="Log out"></a>-->
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -33,7 +41,7 @@
                                 <h4>Upcoming Events</h4>
 
                                 <div class="col-lg-12">
-                                    <div class="card clickable round">
+                                    <div class="card btn-light round">
                                         <div class="card-content">
                                             <h5>CPSC 302</h5>
                                             <h6>Monday, Sept 7 15:00-17:00</h6>
@@ -46,36 +54,35 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="card-content">
-                                <h4>Invites</h4>
+                                <h4>Who's free</h4>
 
                                 <div class="col-lg-12">
-                                    <div class="card clickable round">
+                                    <!--card start-->
+                                    <div class="card btn-light round mb-1">
                                         <div class="card-content">
                                             <div class="row">
-                                                <div class="col-lg-8">
-                                                    <h5>CPSC 302</h5>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <h5>o o o</h5>
+                                                <div class="col-lg-12 align-items-center">
+                                                    <img src="{{ url_for('static', filename='assets/pfp1.png') }}" class="d-inline-flex circle pfp">
+                                                    <h5 class="d-inline-flex px-2">person 1</h5>
+                                                    <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/chat.png') }}" class="icon btn-light round"></a>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <h6>Monday, Sept 7 15:00-17:00</h6>
-                                                <span>add location tag</span>
-                                                <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
-                                            </div>
-                                            <form method="post">
-                                                <div class="form-group row">
-                                                    <div class="col-lg-6">
-                                                        <input type="submit" class="form-control form-control-lg btn-danger" name="submit" value="Can't make it">
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <input type="submit" class="form-control form-control-lg btn-primary" name="submit" value="I'm going!">
-                                                    </div>
-                                                </div>
-                                            </form>
                                         </div>
                                     </div>
+                                    <!--card end-->
+                                    <!--card start-->
+                                    <div class="card btn-light round mb-1">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col-lg-12 align-items-center">
+                                                    <img src="{{ url_for('static', filename='assets/pfp2.png') }}" class="d-inline-flex circle pfp">
+                                                    <h5 class="d-inline-flex px-2">person 2</h5>
+                                                    <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/chat.png') }}" class="icon btn-light round"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--card end-->
                                 </div>
                             </div>
                         </div>
@@ -83,10 +90,6 @@
                 </div>
             </div>
     </section>
-    <a href="/new">
-        <div class="new-evt text-center">
-            <span>+</span>
-        </div>
-    </a>
+    <a href="new" class="new-evt circle px-2"><img src="{{ url_for('static', filename='assets/add.png') }}" class="icon-lg btn-light round"></a>
 </body>
 </html>

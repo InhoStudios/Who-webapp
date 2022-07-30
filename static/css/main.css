@@ -18,6 +18,43 @@ a {
     object-fit: cover;
 }
 
+/* modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 40px;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* end modal */
+
 .login-img {
     width: 10vw;
     max-width: 10vw;
@@ -38,15 +75,17 @@ a {
 .icon {
     height: 40px;
     padding: 10px;
-    float: right;
     object-fit: cover;
 }
 
 .icon-lg {
     height: 50px;
     padding: 10px;
-    float: right;
     object-fit: cover;
+}
+
+.float-right {
+    float: right;
 }
 
 .card-shadow {
@@ -80,6 +119,7 @@ a {
 .header h4{
     margin-top: 0 !important;
     line-height: 0 !important;
+    vertical-align: text-bottom;
 }
 
 .new-evt {

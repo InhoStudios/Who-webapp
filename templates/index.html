@@ -11,43 +11,50 @@
     <section class="dashboard-section">
             <div class="full-screen">
                 <div class="container-fluid">
-                    <div class="row pb-2 pt-3">
+                    <div class="row pt-3">
                         <div class="col-lg-9">
                             <div class="d-inline-block">
                                 <div class="card-content">
-                                    <img src="{{ avatar }}" class="align-self-start round pfp-lg">
+                                    <img src="{{ avatar }}" class="round pfp-lg">
                                 </div>
                             </div>
                             <div class="d-inline-block header">
                                 <h3>Welcome back, {{ username }}</h3>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
                             <form method="post">
                                 <input type="submit" src="{{ url_for('static', filename='assets/logout.png') }}" class="hidden-passthrough" name="submit" id="logout" value="Log out">
                             </form>
                             <div class="card-content align-items-center">
-                                <a class="circle px-2" onclick="
+                                <a href="calendar" class="circle"><img src="{{ url_for('static', filename='assets/calendar.png') }}" class="icon-lg btn-light round"></a>
+                                <a onclick="openModal('new')" class="circle"><img src="{{ url_for('static', filename='assets/add.png') }}" class="icon-lg btn-light round"></a>
+                                <a onclick="openModal('upload')" class="circle"><img src="{{ url_for('static', filename='assets/upload.png') }}" class="icon-lg btn-light round"></a>
+                                <a class="circle" onclick="
                                         document.getElementById('logout').click();
                                     "><img src="{{ url_for('static', filename='assets/logout.png') }}" class="icon-lg btn-danger round" name="submit"></a>
-                                <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/calendar.png') }}" class="icon-lg btn-light round"></a>
                                 <!--<a><input type="image" src="{{ url_for('static', filename='assets/logout.png') }}" class="icon btn-light" name="submit" id="submit" value="Log out"></a>-->
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-9">
                             <div class="card-content">
                                 <h4>Upcoming Events</h4>
 
                                 <div class="col-lg-12">
-                                    <div class="card btn-light round">
-                                        <div class="card-content">
-                                            <h5>CPSC 302</h5>
-                                            <h6>Monday, Sept 7 15:00-17:00</h6>
-                                            <span>add location tag</span>
-                                            <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                    <a onclick="openModal('test')">
+                                        <div class="card btn-light round">
+                                            <div class="card-content">
+                                                <h5>CPSC 302</h5>
+                                                <h6>Monday, Sept 7 15:00-17:00</h6>
+                                                <span>add location tag</span>
+                                                <p>lorem ipsum dolar set init this is supposed to look like a normal description</p>
+                                            </div>
                                         </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Modal content -->
+                            <div id="test" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal('test')">&times;</span>
+                                    <div class="row">
+                                        this is a modal
                                     </div>
                                 </div>
                             </div>
@@ -64,20 +71,7 @@
                                                 <div class="col-lg-12 align-items-center">
                                                     <img src="{{ url_for('static', filename='assets/pfp1.png') }}" class="d-inline-flex circle pfp">
                                                     <h5 class="d-inline-flex px-2">person 1</h5>
-                                                    <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/chat.png') }}" class="icon btn-light round"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--card end-->
-                                    <!--card start-->
-                                    <div class="card btn-light round mb-1">
-                                        <div class="card-content">
-                                            <div class="row">
-                                                <div class="col-lg-12 align-items-center">
-                                                    <img src="{{ url_for('static', filename='assets/pfp2.png') }}" class="d-inline-flex circle pfp">
-                                                    <h5 class="d-inline-flex px-2">person 2</h5>
-                                                    <a href="calendar" class="circle px-2"><img src="{{ url_for('static', filename='assets/chat.png') }}" class="icon btn-light round"></a>
+                                                    <a href="https://discord.com/users/259191629049626634" class="circle px-2"><img src="{{ url_for('static', filename='assets/chat.png') }}" class="icon btn-outline-light round float-right"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,6 +84,83 @@
                 </div>
             </div>
     </section>
-    <a href="new" class="new-evt circle px-2"><img src="{{ url_for('static', filename='assets/add.png') }}" class="icon-lg btn-light round"></a>
+    
+    <div id="upload" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('upload')">&times;</span>
+            <form method="post">
+                <div class="form-group row mb-3">
+                    <h4>Import Calendar</h4>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-lg-12">
+                        <input type="file" class="form-control form-control-lg btn-light" id="upload" name="upload">
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-lg-12">
+                        <input type="submit" class="form-control form-control-lg btn-primary" value="Import">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="new" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('new')">&times;</span>
+            
+            <div class="row">
+                <div class="card-content">
+                    <form method="post">
+                        <div class="form-group row mb-3">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control form-control-lg btn-light" placeholder="Add title" name="title">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control btn-light mb-3" name="invites" placeholder="Add guests">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="submit" class="form-control btn-outline-primary" name="find-date" value="Find a time">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-lg-6">
+                                <label for="date">
+                                    Date
+                                </label>
+                                <input type="date" class="form-control btn-light" placeholder="Date" name="date">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="date">
+                                    Starts
+                                </label>
+                                <input type="time" class="form-control btn-light" name="start-time">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="date">
+                                    Ends
+                                </label>
+                                <input type="time" class="form-control btn-light" name="end-time">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-lg-12">
+                                <textarea class="form-control btn-light" cols="50" placeholder="Add description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <input type="submit" class="form-control form-control-lg btn-primary" name="create-event" value="Create event">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
 </body>
 </html>

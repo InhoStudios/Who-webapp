@@ -56,7 +56,7 @@ def index():
     if authenticate_user():
         return redirect(url_for('home'))
     else:
-        scope = "identify guilds.members.read gdm.join".split(" ")
+        scope = "identify guilds guilds.members.read gdm.join".split(" ")
         discord = make_session(scope=scope)
         authorization_url, state = discord.authorization_url(AUTHORIZATION_BASE_URL)
         session['oauth2_state'] = state

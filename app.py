@@ -1,9 +1,11 @@
 import os
+from os.path import join, exists
 from flask import Flask, redirect, request, render_template, url_for, send_file, session
 from werkzeug.utils import redirect, secure_filename
 
 from credentials import client_id, client_secret
 from credentials import authentication_url as auth_url
+from bulletin import Calendar, Event
 
 import requests
 from requests_oauthlib import OAuth2Session
@@ -13,15 +15,22 @@ from datetime import datetime, timezone
 API_ENDPOINT = "https://discord.com/api/v10"
 REDIRECT_URI = "http://127.0.0.1:3000/callback"
 
+UPLOAD_FOLDER = "./calendars"
+ALLOWED_EXTENSIONS = {'ics'}
+
 TOKEN_URL = API_ENDPOINT + "/oauth2/token"
 REVOCATION_URL = API_ENDPOINT + "/oauth2/token/revoke"
 AUTHORIZATION_BASE_URL = API_ENDPOINT + "/oauth2/authorize"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = client_secret
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 if 'http://' in REDIRECT_URI:
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = 'true'
+
+def is_ics(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def token_updater(token):
     session['oauth2_token'] = token
@@ -88,6 +97,31 @@ def home():
         if method == "Log out":
             session.clear()
             return redirect(url_for('index'))
+        # IMPORT CALENDAR FILE
+        if method == "Import":
+            print("importing")
+            # check for no file
+            if 'upload' not in request.files:
+                print('no file')
+                return redirect(request.url)
+            
+            file = request.files['upload']
+
+            # check for empty file name
+            if file.filename == "":
+                return redirect(request.url)
+            
+            if file and is_ics(file.filename):
+                # import code for getting filename from discord app
+                print("file exists and is valid")
+                filename_str = user['user']['id'] + ".ics"
+                filepath = join(app.config['UPLOAD_FOLDER'], secure_filename(filename_str))
+                i = 1
+                while exists(filepath):
+                    filename_str = user['user']['id'] + "_" + str(i) + ".ics"
+                    filepath = join(app.config['UPLOAD_FOLDER'], secure_filename(filename_str))
+                    i += 1
+                file.save(filepath)
     try:
         user = discord.get(API_ENDPOINT + "/oauth2/@me").json()
         print(user)

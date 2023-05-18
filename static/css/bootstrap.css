@@ -3125,6 +3125,7 @@ textarea.form-control-lg {
 }
 .btn-danger:hover {
   color: #fff;
+  cursor: pointer;
   background-color: #bb2d3b;
   border-color: #b02a37;
 }
@@ -3156,6 +3157,7 @@ textarea.form-control-lg {
 }
 .btn-light:hover {
   color: #000;
+  cursor: pointer;
   background-color: #f0f2f4;
   border-color: #f0f2f4;
 }
